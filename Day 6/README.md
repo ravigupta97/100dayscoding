@@ -1,4 +1,4 @@
-# LeetCode Questions Solved on Day 3
+# LeetCode Questions Solved on Day 6
 
 <h2>LeetCode Problem 41</h2>  https://leetcode.com/problems/first-missing-positive/
 <h3>Solution</h3>  https://github.com/ravigupta97/100dayscoding/blob/master/Day%206/LeetCode%20Problem%2041
