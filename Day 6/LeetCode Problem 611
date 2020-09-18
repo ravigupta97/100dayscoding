@@ -22,7 +22,6 @@ Solved by firstly sorting the array and then checking the condition i.e. a+b>c i
 class Solution {
 public:
     int triangleNumber(vector<int>& nums) {
-        //vector<int> snums(nums);
         sort(nums.begin(), nums.end());
         int count = 0;
         for ( int n = nums.size(), k = n - 1; k > 1; --k ) {
