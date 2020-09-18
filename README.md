@@ -11,3 +11,5 @@
 <h2>Day 5</h2>  https://github.com/ravigupta97/100dayscoding/tree/master/Day%205
 
 <h2>Day 6</h2>  https://github.com/ravigupta97/100dayscoding/tree/master/Day%206
+
+<h2>Day 7</h2>  https://github.com/ravigupta97/100dayscoding/tree/master/Day%207
