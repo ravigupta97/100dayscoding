@@ -1,0 +1,47 @@
+Given a positive 32-bit integer n, you need to find the smallest 32-bit integer which has exactly the same digits existing in the integer n and is greater in value than n. If no such positive 32-bit integer exists, you need to return -1.
+
+Example 1:
+
+Input: 12
+Output: 21
+ 
+
+Example 2:
+
+Input: 21
+Output: -1.
+
+
+/*
+Solved by firstly finding first decreasing digit from right and if no decreasing digit is found then the number cannot be greater than that and if found then swap
+*/
+
+
+
+
+class Solution {
+public:
+    int nextGreaterElement(int n) {
+        string s = to_string(n);
+    int i = s.size() - 2;
+   
+    for(i; i >= 0; i--){
+        if(s[i] < s[i + 1])
+            break;
+    }
+    
+    if(i < 0) 
+        return -1;
+    
+    for(int j = s.size() - 1; j > i; j--){
+        if(s[j] > s[i]){
+            swap(s[i], s[j]);
+            break;
+        }
+    }
+    
+    reverse(s.begin() + i + 1, s.end());
+    long res = stol(s);
+    return res > INT_MAX? -1 : res;  
+    }
+};
