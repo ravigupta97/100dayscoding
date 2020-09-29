@@ -33,3 +33,5 @@
 <h2>Day 16</h2>  https://github.com/ravigupta97/100dayscoding/tree/master/Day%2016
 
 <h2>Day 17</h2>  https://github.com/ravigupta97/100dayscoding/tree/master/Day%2017
+
+<h2>Day 18</h2>  https://github.com/ravigupta97/100dayscoding/tree/master/Day%2018
