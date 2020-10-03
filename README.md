@@ -39,3 +39,7 @@
 <h2>Day 19</h2>  https://github.com/ravigupta97/100dayscoding/tree/master/Day%2019
 
 <h2>Day 20</h2>  https://github.com/ravigupta97/100dayscoding/tree/master/Day%2020
+
+<h2>Day 21</h2>  https://github.com/ravigupta97/100dayscoding/tree/master/Day%2021
+
+<h2>Day 22</h2>  https://github.com/ravigupta97/100dayscoding/tree/master/Day%2022
