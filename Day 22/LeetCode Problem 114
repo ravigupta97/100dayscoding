@@ -1,0 +1,64 @@
+Given a binary tree, flatten it to a linked list in-place.
+
+For example, given the following tree:
+
+    1
+   / \
+  2   5
+ / \   \
+3   4   6
+The flattened tree should look like:
+
+1
+ \
+  2
+   \
+    3
+     \
+      4
+       \
+        5
+         \
+          6
+          
+          
+          
+          
+/*
+Solved by using the approach that shift all the nodes in the left to the right of the previous node
+*/          
+
+
+
+
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+ * };
+ */
+class Solution {
+public:
+    void flatten(TreeNode* root) {
+        while(root){
+            if(root->left == NULL)
+                root = root->right;
+            else{
+                if(root->right){
+                    TreeNode *l = root->left;
+                    while(l->right)
+                        l = l->right;
+                    l->right = root->right;
+                }
+                root->right = root->left;
+                root->left = NULL;
+                root = root->right;
+            }
+        }
+    }
+};
