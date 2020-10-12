@@ -55,3 +55,9 @@
 <h2>Day 27</h2>  https://github.com/ravigupta97/100dayscoding/tree/master/Day%2027
 
 <h2>Day 28</h2>  https://github.com/ravigupta97/100dayscoding/tree/master/Day%2028
+
+<h2>Day 29</h2>  https://github.com/ravigupta97/100dayscoding/tree/master/Day%2029
+
+<h2>Day 30</h2>  https://github.com/ravigupta97/100dayscoding/tree/master/Day%2030
+
+<h2>Day 31</h2>  https://github.com/ravigupta97/100dayscoding/tree/master/Day%2031
