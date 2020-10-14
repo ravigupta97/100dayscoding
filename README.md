@@ -63,3 +63,5 @@
 <h2>Day 31</h2>  https://github.com/ravigupta97/100dayscoding/tree/master/Day%2031
 
 <h2>Day 32</h2>  https://github.com/ravigupta97/100dayscoding/tree/master/Day%2032
+
+<h2>Day 33</h2>  https://github.com/ravigupta97/100dayscoding/tree/master/Day%2033
