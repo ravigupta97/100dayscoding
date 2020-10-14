@@ -1,0 +1,63 @@
+Given a binary tree and a sum, find all root-to-leaf paths where each path's sum equals the given sum.
+
+Note: A leaf is a node with no children.
+
+Example:
+
+Given the below binary tree and sum = 22,
+
+      5
+     / \
+    4   8
+   /   / \
+  11  13  4
+ /  \    / \
+7    2  5   1
+Return:
+
+[
+   [5,4,11,2],
+   [5,8,4,5]
+]
+
+
+
+
+
+/*
+Solved by using the level order traversal and check leaf and if sum is equal to value of root and storing the current path
+*/
+
+
+
+
+
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+ * };
+ */
+class Solution {
+public:
+    vector<vector<int>> ans;
+    vector<vector<int>> pathSum(TreeNode* root, int sum) {
+        vector<int> path{};
+        help(root, sum, path);
+        return ans;
+    }
+    void help(TreeNode* root, int sum, vector<int>& path)
+    {
+        if (!root) return;
+        path.push_back(root->val); 
+        if(!root->left&&!root->right&&sum==root->val) ans.push_back(path);
+        help(root->left, sum-root->val, path);
+        help(root->right, sum-root->val, path);
+        path.pop_back();
+    }
+};
