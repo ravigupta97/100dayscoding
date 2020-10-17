@@ -10,4 +10,4 @@
 <h3>Solution</h3>  https://github.com/ravigupta97/100dayscoding/blob/master/Day%2036/LeetCode%20Problem%20152
 
 <h2>LeetCode Problem 187</h2>  https://leetcode.com/problems/repeated-dna-sequences/
-<h3>Solution</h3>  https://github.com/ravigupta97/100dayscoding/blob/master/Day%2036/LeetCode%20Problem%20189
+<h3>Solutions</h3>  https://github.com/ravigupta97/100dayscoding/blob/master/Day%2036/LeetCode%20Problem%20189
