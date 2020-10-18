@@ -1,0 +1,39 @@
+Given a positive integer n, find the least number of perfect square numbers (for example, 1, 4, 9, 16, ...) which sum to n.
+
+Example 1:
+
+Input: n = 12
+Output: 3 
+Explanation: 12 = 4 + 4 + 4.
+Example 2:
+
+Input: n = 13
+Output: 2
+Explanation: 13 = 4 + 9.
+
+
+
+
+
+/*
+Solved by traveling till the value of n and calculating the squares i.e till when the we need to add them to get n andstoring them in vector and returning the last value of vector
+*/
+
+
+
+
+
+class Solution {
+public:
+    int numSquares(int n) {
+        vector<int> output{0};
+        while(output.size() <= n){
+            int m =output.size(), squares = INT_MAX;
+            for(int i=1; i*i <= m; ++i){
+                squares = min(squares, output[m-i*i]+1);
+            }
+            output.push_back(squares);
+        }
+        return output[n];
+    }
+};
