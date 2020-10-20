@@ -1,0 +1,59 @@
+Given a non-empty array nums containing only positive integers, find if the array can be partitioned into two subsets such that the sum of elements in both subsets is equal.
+
+ 
+
+Example 1:
+
+Input: nums = [1,5,11,5]
+Output: true
+Explanation: The array can be partitioned as [1, 5, 5] and [11].
+Example 2:
+
+Input: nums = [1,2,3,5]
+Output: false
+Explanation: The array cannot be partitioned into equal sum subsets.
+ 
+
+Constraints:
+
+1 <= nums.length <= 200
+1 <= nums[i] <= 100
+
+
+
+
+
+
+/*
+Solved by calculating the total sum of the vector and then dividing it by 2 to get subset sum 
+and then traverse the vector and maintaining a vector to check if partition is possible 
+*/
+
+
+
+
+
+
+class Solution {
+public:
+    bool canPartition(vector<int>& nums) {
+        int totalSum = 0;
+        for(int i=0;i<nums.size();i++){
+            totalSum = totalSum + nums[i];
+        }
+        
+        if(totalSum % 2 != 0)
+            return false;
+        int subsetSum = totalSum/2;
+        vector<bool> dp(subsetSum+1);
+        dp[0] = true;
+        for(int i : nums){
+            for(int j=subsetSum; j>=i; j--){
+                dp[j] = dp[j] || dp[j-i];
+                if(dp[subsetSum])
+                    return true;
+            }
+        }
+        return false;
+    }
+};
