@@ -75,3 +75,9 @@
 <h2>Day 37</h2>  https://github.com/ravigupta97/100dayscoding/tree/master/Day%2037
 
 <h2>Day 38</h2>  https://github.com/ravigupta97/100dayscoding/tree/master/Day%2038
+
+<h2>Day 39</h2>  https://github.com/ravigupta97/100dayscoding/tree/master/Day%2039
+
+<h2>Day 40</h2>  https://github.com/ravigupta97/100dayscoding/tree/master/Day%2040
+
+<h2>Day 41</h2>  https://github.com/ravigupta97/100dayscoding/tree/master/Day%2041
