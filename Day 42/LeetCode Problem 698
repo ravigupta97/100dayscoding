@@ -1,0 +1,69 @@
+Given an array of integers nums and a positive integer k, find whether it's possible to divide this array into k non-empty subsets whose sums are all equal.
+
+ 
+
+Example 1:
+
+Input: nums = [4, 3, 2, 3, 5, 2, 1], k = 4
+Output: True
+Explanation: It's possible to divide it into 4 subsets (5), (1, 4), (2,3), (2,3) with equal sums.
+ 
+
+Note:
+
+1 <= k <= len(nums) <= 16.
+0 < nums[i] < 10000.
+
+
+
+
+
+/*
+Solved by calculating the subset sum and searching if is it possible to create a subarray if possible then return true else false
+*/
+
+
+
+
+
+
+class Solution {
+public:
+    bool canPartitionKSubsets(vector<int>& nums, int k) {
+        int totalSum = 0;
+        
+        for(int i=0;i<nums.size();i++){
+            totalSum = totalSum + nums[i];
+        }
+        int subsetSum = totalSum/k;
+        sort(nums.begin(), nums.end());
+        int row = nums.size()-1;
+        if(nums[row] > subsetSum)
+            return false;
+        
+        while(row >= 0 and nums[row] == subsetSum){
+            row--;
+            k--;
+        }
+        vector<int> dp(k);
+        return search(dp, row, nums, subsetSum);
+    }
+        
+    bool search(vector<int> group, int row, vector<int> &nums, int subsetSum){
+        if(row < 0)
+            return true;
+        int x = nums[row--];
+        for(int i=0;i<group.size();i++){
+            if(group[i] + x <= subsetSum){
+                group[i] += x;
+                if(search(group, row, nums, subsetSum))
+                    return true;
+                group[i] -= x;
+            }
+            if(group[i] == 0)
+                break;
+        }
+        return false;
+    }
+     
+};
