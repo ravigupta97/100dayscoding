@@ -1,0 +1,62 @@
+Given a string S, count the number of distinct, non-empty subsequences of S .
+
+Since the result may be large, return the answer modulo 10^9 + 7.
+
+ 
+
+Example 1:
+
+Input: "abc"
+Output: 7
+Explanation: The 7 distinct subsequences are "a", "b", "c", "ab", "ac", "bc", and "abc".
+Example 2:
+
+Input: "aba"
+Output: 6
+Explanation: The 6 distinct subsequences are "a", "b", "ab", "ba", "aa" and "aba".
+Example 3:
+
+Input: "aaa"
+Output: 3
+Explanation: The 3 distinct subsequences are "a", "aa" and "aaa".
+ 
+
+ 
+
+Note:
+
+S contains only lowercase letters.
+1 <= S.length <= 2000
+
+
+
+
+
+/*
+Solved by using the dynamic programming approach and finding all the subsequences and subtracting the empty subsequences
+*/
+
+
+
+
+class Solution {
+public:
+    int distinctSubseqII(string S) {
+        int n = S.length();
+        vector<int> dp(n+1);
+        dp[0] = 1;
+        vector<int> last(26, -1);
+        for(int i=0;i<n;i++){
+            int x = S[i] - 'a';
+            dp[i+1] = dp[i]*2 % 1000000007;
+            if(last[x] >= 0)
+                dp[i+1] -= dp[last[x]];
+            dp[i+1] %= 1000000007;
+            last[x] = i;
+        }
+        dp[n]--;
+        if(dp[n] < 0)
+            dp[n] += 1000000007;
+        return dp[n];
+    }
+};
