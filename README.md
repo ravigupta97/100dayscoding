@@ -81,3 +81,13 @@
 <h2>Day 40</h2>  https://github.com/ravigupta97/100dayscoding/tree/master/Day%2040
 
 <h2>Day 41</h2>  https://github.com/ravigupta97/100dayscoding/tree/master/Day%2041
+
+<h2>Day 42</h2>  https://github.com/ravigupta97/100dayscoding/tree/master/Day%2042
+
+<h2>Day 43</h2>  https://github.com/ravigupta97/100dayscoding/tree/master/Day%2043
+
+<h2>Day 44</h2>  https://github.com/ravigupta97/100dayscoding/tree/master/Day%2044
+
+<h2>Day 45</h2>  https://github.com/ravigupta97/100dayscoding/tree/master/Day%2045
+
+<h2>Day 46</h2>  https://github.com/ravigupta97/100dayscoding/tree/master/Day%2046
