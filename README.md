@@ -99,3 +99,9 @@
 <h2>Day 49</h2>  https://github.com/ravigupta97/100dayscoding/tree/master/Day%2049
 
 <h2>Day 50</h2>  https://github.com/ravigupta97/100dayscoding/tree/master/Day%2050
+
+<h2>Day 51</h2>  https://github.com/ravigupta97/100dayscoding/tree/master/Day%2051
+
+<h2>Day 52</h2>  https://github.com/ravigupta97/100dayscoding/tree/master/Day%2052
+
+<h2>Day 53</h2>  https://github.com/ravigupta97/100dayscoding/tree/master/Day%2053
