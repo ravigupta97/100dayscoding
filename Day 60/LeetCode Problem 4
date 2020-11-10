@@ -1,0 +1,94 @@
+Given two sorted arrays nums1 and nums2 of size m and n respectively, return the median of the two sorted arrays.
+
+Follow up: The overall run time complexity should be O(log (m+n)).
+
+ 
+
+Example 1:
+
+Input: nums1 = [1,3], nums2 = [2]
+Output: 2.00000
+Explanation: merged array = [1,2,3] and median is 2.
+Example 2:
+
+Input: nums1 = [1,2], nums2 = [3,4]
+Output: 2.50000
+Explanation: merged array = [1,2,3,4] and median is (2 + 3) / 2 = 2.5.
+Example 3:
+
+Input: nums1 = [0,0], nums2 = [0,0]
+Output: 0.00000
+Example 4:
+
+Input: nums1 = [], nums2 = [1]
+Output: 1.00000
+Example 5:
+
+Input: nums1 = [2], nums2 = []
+Output: 2.00000
+ 
+
+Constraints:
+
+nums1.length == m
+nums2.length == n
+0 <= m <= 1000
+0 <= n <= 1000
+1 <= m + n <= 2000
+-106 <= nums1[i], nums2[i] <= 106
+
+
+
+
+
+
+
+/*
+Solved by cheching the fact that length of first array should be greater than second one and then apply binary search on first array
+*/
+
+
+
+
+
+
+class Solution {
+public:
+    double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2) {
+        
+        if(nums1.size() > nums2.size()) {
+            return findMedianSortedArrays(nums2, nums1);
+        }
+        
+        int x = nums1.size(); 
+        int y = nums2.size(); 
+        
+        int low = 0;
+        int high = x;
+        
+        while(low <= high) {
+            int partitionX = (low + high)  / 2;
+            int partitionY = (x + y + 1) / 2 - partitionX;
+
+            int LeftMaxX = (partitionX == 0 ? INT_MIN : nums1[partitionX - 1]);
+            int rightMinX = (partitionX == x ? INT_MAX : nums1[partitionX]);
+
+			int LeftMaxY = (partitionY == 0 ? INT_MIN : nums2[partitionY - 1]);
+            int rightMinY = (partitionY == y ? INT_MAX : nums2[partitionY]);
+
+            if(LeftMaxX <= rightMinY && LeftMaxY <= rightMinX){
+            	if((x + y) % 2 == 0) {
+            		double ans = (((double)max(LeftMaxX, LeftMaxY)+(double)min(rightMinX, rightMinY))/2.0);
+                    return ans;
+            	} else {
+            		return max(LeftMaxX, LeftMaxY);
+            	}
+            } else if(LeftMaxX > rightMinY) {
+            	high = partitionX - 1;
+            } else {
+            	low = partitionX + 1;
+            }
+        }
+        return 0;
+    }
+};
