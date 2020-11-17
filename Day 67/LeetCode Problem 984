@@ -1,0 +1,78 @@
+Given two integers A and B, return any string S such that:
+
+S has length A + B and contains exactly A 'a' letters, and exactly B 'b' letters;
+The substring 'aaa' does not occur in S;
+The substring 'bbb' does not occur in S.
+ 
+
+Example 1:
+
+Input: A = 1, B = 2
+Output: "abb"
+Explanation: "abb", "bab" and "bba" are all correct answers.
+Example 2:
+
+Input: A = 4, B = 1
+Output: "aabaa"
+ 
+
+Note:
+
+0 <= A <= 100
+0 <= B <= 100
+It is guaranteed such an S exists for the given A and B.
+
+
+
+
+
+
+
+
+/*
+Solved by checking for the conditions and creating the string and checking that 'aaa' and 'bbb' does not occur in S
+*/
+
+
+
+
+
+
+
+
+
+class Solution {
+public:
+    string strWithout3a3b(int A, int B) {
+        string s="";
+        int n=A+B;
+        while(A-B>=2 && A>=2 && B>0  && n-3>=0)
+        {
+        	s+="aab";
+        	A-=2;
+        	B--;
+            n-=3;
+        }
+
+        while(B-A>=2 && B>=2 && A>0 && n-3>=0)
+        {
+        	s+="bba";
+        	B-=2;
+        	A--;
+            n-=3;
+        }
+
+        while(B>0 && A>0 && n-2>=0)
+        {
+        	s+="ba";
+        	B--;
+        	A--;
+            n-=2;
+        }
+
+        while(A--) s+="a";
+        while(B--) s+="b";
+
+        return s;
+    }
+};
