@@ -1,0 +1,55 @@
+Return the lexicographically smallest subsequence of s that contains all the distinct characters of s exactly once.
+Example 1:
+
+Input: s = "bcabc"
+Output: "abc"
+Example 2:
+
+Input: s = "cbacdcbc"
+Output: "acdb"
+ 
+
+Constraints:
+
+1 <= s.length <= 1000
+s consists of lowercase English letters.
+
+
+
+
+
+
+
+/*
+Solved by traversing over the string putting the char in the map and creating the subsequence of alldistinct char
+*/
+
+
+
+
+
+
+
+
+class Solution {
+public:
+	string smallestSubsequence(string text) {
+		unordered_map<char,int> m;
+		for(int i=0;i<text.size();i++){
+			m[text[i]]=i;
+		}
+		string ans;
+		unordered_set<char> visited;
+		for(int i=0;i<text.size();i++){
+			while(!visited.count(text[i]) && !ans.empty() && text[i]<ans.back() && m[ans.back()]>i){
+				visited.erase(ans.back());
+				ans.pop_back();
+			}
+			if(!visited.count(text[i])){
+				ans+=text[i];
+				visited.insert(text[i]);
+			}
+		}
+		return ans;     
+	}
+};
