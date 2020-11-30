@@ -25,7 +25,7 @@ n == mat[i].length
 
 
 /*
-Solved by creating the dp vector and then calculate the starting snd ending of the rows and column of the resultant matrix
+Solved by creating the dp vector and build the dp vector and then calculate the starting snd ending of the rows and column of the resultant matrix
 */
 
 
