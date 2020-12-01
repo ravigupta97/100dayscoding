@@ -51,3 +51,47 @@ Constraints:
 /*
 Solved by traversing elements from ends are removed the remaining elements form contiguous subarray and then reduces to finding min subarray of window size array.len - k.
 */
+
+
+
+
+
+
+
+
+
+class Solution {
+public:
+    int maxScore(vector<int>& cardPoints, int k) {
+        
+        int len = cardPoints.size();
+        int wlen = len - k;
+        int minWSum = INT_MAX, wSum = 0, totalSum = 0;
+        
+        
+        for(int i = 0; i < len; i++)
+        {
+            if(i < (len - k))
+            {
+                wSum += cardPoints[i];
+            }
+            totalSum += cardPoints[i];
+        }
+        
+        minWSum = wSum;
+        
+        for(int i=1; i < (len-wlen+1); i++)
+        {
+            wSum -= cardPoints[i-1];
+            wSum += cardPoints[i+wlen-1];
+            
+            if(wSum < minWSum)
+            {
+                minWSum = wSum;
+            }
+        }
+        
+        return totalSum - minWSum;
+        
+    }
+};
