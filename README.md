@@ -155,3 +155,11 @@
 <h2>Day 77</h2>  https://github.com/ravigupta97/100dayscoding/tree/master/Day%2077
 
 <h2>Day 78</h2>  https://github.com/ravigupta97/100dayscoding/tree/master/Day%2078
+
+<h2>Day 79</h2>  https://github.com/ravigupta97/100dayscoding/tree/master/Day%2079
+
+<h2>Day 80</h2>  https://github.com/ravigupta97/100dayscoding/tree/master/Day%2080
+
+<h2>Day 81</h2>  https://github.com/ravigupta97/100dayscoding/tree/master/Day%2081
+
+<h2>Day 82</h2>  https://github.com/ravigupta97/100dayscoding/tree/master/Day%2082
