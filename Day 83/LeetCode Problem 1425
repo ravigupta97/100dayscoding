@@ -1,0 +1,78 @@
+Given an integer array nums and an integer k, return the maximum sum of a non-empty subsequence of that array such that for every two consecutive integers in the subsequence, nums[i] and nums[j], where i < j, the condition j - i <= k is satisfied.
+
+A subsequence of an array is obtained by deleting some number of elements (can be zero) from the array, leaving the remaining elements in their original order.
+
+ 
+
+Example 1:
+
+Input: nums = [10,2,-10,5,20], k = 2
+Output: 37
+Explanation: The subsequence is [10, 2, 5, 20].
+Example 2:
+
+Input: nums = [-1,-2,-3], k = 1
+Output: -1
+Explanation: The subsequence must be non-empty, so we choose the largest number.
+Example 3:
+
+Input: nums = [10,-2,-10,-5,20], k = 2
+Output: 23
+Explanation: The subsequence is [10, -2, -5, 20].
+ 
+
+Constraints:
+
+1 <= k <= nums.length <= 10^5
+-10^4 <= nums[i] <= 10^4
+
+
+
+
+
+
+
+/*
+Solved by creating a new vector to store and calculate the index of the maxinmum sum and then return the maximum sum of a non-empty subsequence
+*/
+
+
+
+
+
+
+
+class Solution {
+public:
+    int constrainedSubsetSum(vector<int>& nums, int k) {
+        
+        vector<int> dp(nums.size(),0);
+        dp[0]=nums[0];
+        int m=dp[0];
+        
+        
+      int curr_max= 0;
+        
+            for (int j = 1; j < nums.size(); j++)
+            {
+                if (j - curr_max > k)
+                {
+                    curr_max = j - 1;
+                    for (int i = j - 2; i >= 0 && j - i <= k; i--)
+                        if (dp[curr_max] < dp[i])
+                            curr_max = i;
+                }
+
+                dp[j] = max(nums[j], nums[j] + dp[curr_max]);
+
+                if (dp[curr_max] < dp[j])
+                    curr_max = j;
+                
+                m=max(m,dp[j]);
+            }
+
+         
+        return m;
+        
+    }
+};
