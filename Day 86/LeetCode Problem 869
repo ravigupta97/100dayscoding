@@ -1,0 +1,83 @@
+Starting with a positive integer N, we reorder the digits in any order (including the original order) such that the leading digit is not zero.
+
+Return true if and only if we can do this in a way such that the resulting number is a power of 2.
+
+ 
+
+Example 1:
+
+Input: 1
+Output: true
+Example 2:
+
+Input: 10
+Output: false
+Example 3:
+
+Input: 16
+Output: true
+Example 4:
+
+Input: 24
+Output: false
+Example 5:
+
+Input: 46
+Output: true
+ 
+
+Note:
+
+1 <= N <= 10^9
+
+
+
+
+
+
+
+
+
+/*
+Solved by checking if the n is the power of 2 using the & operator and it returns 0 if it is the power of 2 then N and
+power of 2 have same number of each digit. and then we check that all digits have same number
+*/
+
+
+
+
+
+
+
+
+
+
+class Solution {
+public:
+    bool reorderedPowerOf2(int N) {
+        if ((N & N-1) == 0) 
+            return true;
+        int n = N ;
+        array<int, 10> table{0};
+        while(n > 0){
+            table[n%10]++;
+            n/=10;
+        }
+        for(int i = 0;i < 32;++i){   
+            n = 1 << i;
+            array<int, 10> clone_table = table;
+            while(n > 0){
+                clone_table[n%10]--;
+                n/=10;
+            }
+            int check=0;
+            for(int j = 0 ; j < 10; j++){
+                check |= clone_table[j];
+            }  
+            if(check == 0){
+                return true;
+            }
+        }
+        return false;
+    }
+};
