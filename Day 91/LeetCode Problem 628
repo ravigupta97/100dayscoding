@@ -1,0 +1,54 @@
+Given an integer array nums, find three numbers whose product is maximum and return the maximum product.
+
+ 
+
+Example 1:
+
+Input: nums = [1,2,3]
+Output: 6
+Example 2:
+
+Input: nums = [1,2,3,4]
+Output: 24
+Example 3:
+
+Input: nums = [-1,-2,-3]
+Output: -6
+ 
+
+Constraints:
+
+3 <= nums.length <= 104
+-1000 <= nums[i] <= 1000
+
+
+
+
+
+
+
+
+/*
+Solved by firstly sorting the given array and then storing the product of last three numbers and then computing the maximum of the stored product and the product of first three numbers 
+*/
+
+
+
+
+
+
+
+
+
+
+class Solution {
+public:
+    int maximumProduct(vector<int>& nums) {
+        sort(nums.begin(),nums.end());
+        int pro=1;
+        int n=nums.size();
+        pro=nums[n-1]*nums[n-2]*nums[n-3];
+        pro=max(pro,nums[n-1]*nums[0]*nums[1]);
+        return pro;
+    }
+};
