@@ -1,0 +1,63 @@
+Given an integer n, return the number of trailing zeroes in n!.
+
+Follow up: Could you write a solution that works in logarithmic time complexity?
+
+ 
+
+Example 1:
+
+Input: n = 3
+Output: 0
+Explanation: 3! = 6, no trailing zero.
+Example 2:
+
+Input: n = 5
+Output: 1
+Explanation: 5! = 120, one trailing zero.
+Example 3:
+
+Input: n = 0
+Output: 0
+ 
+
+Constraints:
+
+1 <= n <= 104
+
+
+
+
+
+
+
+
+/*
+Solved by using the approach that for the trailing zeros count the how many 5 does the n! have so the number of 5 in the n! are the number of trailing zeros in n!
+*/
+
+
+
+
+
+
+
+
+class Solution {
+public:
+    int trailingZeroes(int n) {
+        int i = 1;
+        int k = 0;
+        while (i <= n) {
+            i *= 5;
+            ++k;
+        }
+        
+        int count = 0; 
+        for(int i = 1; i < k; ++i) {
+            count += n / pow(5,i);
+        }
+        
+        return count;
+        
+    }
+};
