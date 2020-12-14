@@ -39,8 +39,8 @@ It's guaranteed that words[i] will be unique.
 
 
 /*
-Solved by ttraversing over the string character by character and comparing them and 
-comparing according to the condition and store the string in the vector which is substring of another word in any order.  
+Solved by ttraversing over the string character by character and comparing them and comparing according to the
+condition and store the string in the vector which is substring of another word in any order.  
 */
 
 
