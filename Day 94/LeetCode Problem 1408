@@ -1,0 +1,71 @@
+Given an array of string words. Return all strings in words which is substring of another word in any order. 
+
+String words[i] is substring of words[j], if can be obtained removing some characters to left and/or right side of words[j].
+
+ 
+
+Example 1:
+
+Input: words = ["mass","as","hero","superhero"]
+Output: ["as","hero"]
+Explanation: "as" is substring of "mass" and "hero" is substring of "superhero".
+["hero","as"] is also a valid answer.
+Example 2:
+
+Input: words = ["leetcode","et","code"]
+Output: ["et","code"]
+Explanation: "et", "code" are substring of "leetcode".
+Example 3:
+
+Input: words = ["blue","green","bu"]
+Output: []
+ 
+
+Constraints:
+
+1 <= words.length <= 100
+1 <= words[i].length <= 30
+words[i] contains only lowercase English letters.
+It's guaranteed that words[i] will be unique.
+
+
+
+
+
+
+
+
+
+
+
+/*
+Solved by ttraversing over the string character by character and comparing them and 
+comparing according to the condition and store the string in the vector which is substring of another word in any order.  
+*/
+
+
+
+
+
+
+
+
+
+
+class Solution {
+public:
+    vector<string> stringMatching(vector<string>& w) {       
+        vector<string> s;        
+        for(int i=0;i<w.size();i++){
+            for(int j=0;j<w.size();j++){
+                if(j==i || w[i].size()>w[j].size())
+                    continue;                
+                if(w[j].find(w[i]) !=-1){
+                    s.push_back(w[i]); 
+                    break;
+                }
+            }
+        }
+        return s;
+    }
+};
