@@ -1,0 +1,65 @@
+Given an integer n, add a dot (".") as the thousands separator and return it in string format.
+
+ 
+
+Example 1:
+
+Input: n = 987
+Output: "987"
+Example 2:
+
+Input: n = 1234
+Output: "1.234"
+Example 3:
+
+Input: n = 123456789
+Output: "123.456.789"
+Example 4:
+
+Input: n = 0
+Output: "0"
+ 
+
+Constraints:
+
+0 <= n < 2^31
+
+
+
+
+
+
+
+
+/*
+Solved by converting the int value into the string using the function to_string and 
+including the '.' at the thousands position and storing into a string and if n=0 then return "0"
+*/
+
+
+
+
+
+
+
+
+
+
+
+class Solution {
+public:
+    string thousandSeparator(int n) {
+        string ans="";
+        int i=3;
+        while(n>0){
+            ans = to_string(n%10) +  ans;
+            n /= 10;
+            i--;
+            if(i==0 && n!=0){
+                i=3;
+                ans = "." + ans;
+            }
+        }
+        return ans=="" ? "0" : ans;
+    }
+};
