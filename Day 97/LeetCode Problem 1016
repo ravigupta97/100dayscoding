@@ -1,0 +1,82 @@
+Given a binary string S (a string consisting only of '0' and '1's) and a positive integer N, return true if and only if for every integer X from 1 to N, the binary representation of X is a substring of S.
+
+ 
+
+Example 1:
+
+Input: S = "0110", N = 3
+Output: true
+Example 2:
+
+Input: S = "0110", N = 4
+Output: false
+ 
+
+Note:
+
+1 <= S.length <= 1000
+1 <= N <= 10^9
+
+
+
+
+
+
+
+
+
+
+/*
+Solved by firstly converting the numbers into string form and then check if the string converted from the number
+is a substring of the original string passed if for any number between 1 to n is not a substring then return false
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+class Solution {
+public:
+    string find(int n)
+    {
+        string s="";
+        while(n>0)
+        {
+            int a=n%2;
+            s=s+to_string(a);
+            n=n/2;
+        }
+        reverse(s.begin(),s.end());
+        return s;
+    }
+    bool check(string s,string p)
+    {
+        for(int i=0;i<s.size();i++)
+        {
+            if(s.substr(i,p.size())==p)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+    bool queryString(string s, int n)
+    {
+        for(int i=1;i<=n;i++)
+        {
+            string s1=find(i);
+            if(!check(s,s1))
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+};
